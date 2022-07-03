@@ -1,16 +1,50 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+/* Tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Tailwind */
+
+/* Modal Styles*/
+/* Backdrop */
+.modal-backdrop-enter {
+  opacity: 0.04;
+}
+.modal-backdrop-enter.modal-backdrop-enter-active {
+  opacity: 1;
+  transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+.modal-backdrop-exit {
+  opacity: 1;
+}
+.modal-backdrop-exit.modal-backdrop-exit-active {
+  opacity: 0.01;
+  transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  /* Add delay, close modal first then close backdrop */
+  transition-delay: 100ms;
+}
+/* Backdrop */
+
+/* Modal */
+.modal-enter {
+  opacity: 0.01;
+  transform: translateY(40%);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.modal-enter.modal-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-* {
-  box-sizing: border-box;
+.modal-exit {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.modal-exit.modal-exit-active {
+  opacity: 0.01;
+  transform: translateY(40%);
+  transition: transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
+    opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
 }
