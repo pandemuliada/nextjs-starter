@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
+import toast from "react-hot-toast";
 
 export default function Home() {
   return (
@@ -11,12 +12,36 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <button
+        onClick={() => {
+          toast.promise(
+            new Promise((resolve, reject) => {
+              setTimeout(() => {
+                reject(true);
+              }, 5000);
+            }),
+            {
+              loading: "Loading",
+              success: "Got the data",
+              error: "Error when fetching",
+            }
+          );
+        }}
+      >
+        Show Toast
+      </button>
+
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <p className={styles.description}>
+        <p
+          className={styles.description}
+          onClick={() => {
+            // toast.error("Hello world");
+          }}
+        >
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
