@@ -7,9 +7,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <RecoilRoot>
       {/* React Host Toast Root */}
-      <Toaster position="top-right" reverseOrder={true} />
+      <Toaster position="top-right" reverseOrder={false} />
       {/* React Host Toast Root */}
-
       <Component {...pageProps} />
     </RecoilRoot>
   );
