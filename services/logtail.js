@@ -10,5 +10,4 @@ const logtail = () => {
   return new Logtail(_logtailSourceToken);
 };
 
-export { isUsingLogtail };
 export default logtail;
