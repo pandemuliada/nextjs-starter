@@ -5,7 +5,9 @@ const success = (message = "", removeable = true) => {
   return toast.custom(
     (t) => (
       <div
-        className={`bg-white shadow-md rounded-md pl-5 pr-6 py-4 max-w-[300px] animate__animated animate__faster border-l-4 border-solid border-green-400 ${
+        className={`bg-white shadow-md rounded-md pl-5 ${
+          removeable ? "pr-4" : "pr-5"
+        } py-4 max-w-[300px] animate__animated animate__faster border-l-4 border-solid border-green-400 ${
           t.visible ? "animate__fadeInRight" : "animate__fadeOutRight"
         }`}
       >
