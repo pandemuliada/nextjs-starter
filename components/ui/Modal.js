@@ -12,7 +12,7 @@ const Modal = (props) => {
   } = props;
 
   return (
-    <Portal id="modal-portal">
+    <Portal selector="#modal">
       <TransitionGroup>
         {/* Backdrop / Mask */}
         {show && (

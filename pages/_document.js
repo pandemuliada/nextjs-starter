@@ -15,8 +15,9 @@ const Document = () => {
       <body>
         <Main />
         {/* React Portals */}
-        <div id="modal-portal" />
-        <div id="dialog-portal" />
+        <div id="modal" />
+        <div id="drawer" />
+        <div id="dialog" />
         {/* React Portals */}
 
         <NextScript />

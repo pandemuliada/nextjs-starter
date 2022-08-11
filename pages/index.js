@@ -5,9 +5,11 @@ import toast from "react-hot-toast";
 import Modal from "@/components/ui/Modal";
 import { useState } from "react";
 import Toast from "@/components/ui/Toast";
+import Drawer from "@/components/ui/Drawer";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [showDrawer, setShowDrawer] = useState(false);
 
   return (
     <div>
@@ -36,8 +38,14 @@ export default function Home() {
             Default Success Toast
           </button>
         </div>
-        <div className="border rounded-md"></div>
+        <div className="border rounded-md">
+          <button onClick={() => setShowDrawer(true)}>Show Drawer</button>
+          <Drawer show={showDrawer} onClose={() => setShowDrawer(false)}>
+            <button onClick={() => setShowDrawer(false)}>Exit</button>
+          </Drawer>
+        </div>
       </div>
+
       <Modal show={showModal} onClose={() => setShowModal(false)}>
         <div className="w-full md:w-[400px]">
           <p>Something to describe</p>
@@ -62,25 +70,6 @@ export default function Home() {
           </button>
         </div>
       </Modal>
-
-      <button
-        onClick={() => {
-          toast.promise(
-            new Promise((resolve, reject) => {
-              setTimeout(() => {
-                reject(true);
-              }, 5000);
-            }),
-            {
-              loading: "Loading",
-              success: "Got the data",
-              error: "Error when fetching",
-            }
-          );
-        }}
-      >
-        Show Toast
-      </button>
     </div>
   );
 }
