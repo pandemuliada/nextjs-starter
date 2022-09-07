@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Portal from "@/components/Portal";
 import { IoClose } from "react-icons/io5";
 import classNames from "classnames";
+import { useDisableScroll } from "@/hooks";
 
 const Modal = (props) => {
   const {
@@ -12,6 +13,9 @@ const Modal = (props) => {
     centered = false, // Always true
     scrollable = false,
   } = props;
+
+  // Disable scroll when modal open
+  useDisableScroll(show);
 
   return (
     <Portal selector="#modal">
