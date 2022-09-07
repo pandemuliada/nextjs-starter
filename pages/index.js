@@ -7,6 +7,7 @@ import { useState } from "react";
 import Toast from "@/components/ui/Toast";
 import Drawer from "@/components/ui/Drawer";
 import Button from "@/components/ui/Button";
+import { Input } from "@/components/ui/form";
 
 export default function Home() {
   const [showDrawer, setShowDrawer] = useState(false);
@@ -41,7 +42,6 @@ export default function Home() {
             Default Success Toast
           </button>
         </div>
-
         <div className="border rounded-md p-8">
           <h2 className="text-3xl mb-5">Drawer & Modal</h2>
 
@@ -101,6 +101,14 @@ export default function Home() {
             </div>
           </Modal>
         </div>
+      </div>
+
+      <div className="border rounded-md p-5 mx-8">
+        <h2 className="text-3xl mb-5">Form</h2>
+
+        <form>
+          <Input.Text error />
+        </form>
       </div>
     </div>
   );

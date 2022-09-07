@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@h6s/calendar": "^1.0.5",
     "@logtail/browser": "^0.1.12",
     "@tailwindcss/forms": "^0.5.3",
     "autoprefixer": "^10.4.7",
@@ -24,11 +25,12 @@
     "postcss": "^8.4.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-dropzone": "^14.2.2",
     "react-hook-form": "^7.33.0",
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.4.0",
     "react-markdown": "^8.0.3",
-    "react-select": "^5.3.2",
+    "react-select": "^5.4.0",
     "react-transition-group": "^4.4.2",
     "recoil": "^0.7.4",
     "tailwindcss": "^3.1.4"
