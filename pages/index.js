@@ -8,8 +8,10 @@ import Toast from "@/components/ui/Toast";
 import Drawer from "@/components/ui/Drawer";
 
 export default function Home() {
-  const [showModal, setShowModal] = useState(false);
   const [showDrawer, setShowDrawer] = useState(false);
+  const [showScrollableModal, setShowScrollableModal] = useState(false);
+  const [showCenteredModal, setShowCenteredModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div>
@@ -38,38 +40,70 @@ export default function Home() {
             Default Success Toast
           </button>
         </div>
-        <div className="border rounded-md">
-          <button onClick={() => setShowDrawer(true)}>Show Drawer</button>
+
+        <div className="border rounded-md p-8">
+          <h2 className="text-3xl mb-5">Drawer & Modal</h2>
+
+          <button
+            className="bg-gray-200 p-3 rounded mr-5"
+            onClick={() => setShowDrawer(true)}
+          >
+            Show Drawer
+          </button>
           <Drawer show={showDrawer} onClose={() => setShowDrawer(false)}>
             <button onClick={() => setShowDrawer(false)}>Exit</button>
           </Drawer>
+
+          <button
+            className="bg-gray-200 p-3 rounded mr-5"
+            onClick={() => setShowScrollableModal(true)}
+          >
+            Show Scrollable Modal
+          </button>
+          <Modal
+            scrollable
+            show={showScrollableModal}
+            onClose={() => setShowScrollableModal(false)}
+          >
+            <div className="w-[650px] h-[1200px] p-6">
+              <h2 className="font-bold">Scrollable Modal</h2>
+            </div>
+          </Modal>
+
+          <button
+            className="bg-gray-200 p-3 rounded mr-5"
+            onClick={() => setShowCenteredModal(true)}
+          >
+            Show Centered Modal
+          </button>
+          <Modal
+            centered
+            show={showCenteredModal}
+            onClose={() => setShowCenteredModal(false)}
+            className="mt-8"
+          >
+            <div className="w-[650px] h-[500px] p-6">
+              <h2 className="font-bold">Centered Modal</h2>
+            </div>
+          </Modal>
+
+          <button
+            className="bg-gray-200 p-3 rounded mr-5 mt-5"
+            onClick={() => setShowModal(true)}
+          >
+            Show 40px from Top Modal
+          </button>
+          <Modal
+            show={showModal}
+            onClose={() => setShowModal(false)}
+            className="mt-10"
+          >
+            <div className="w-[650px] h-[500px] p-6">
+              <h2 className="font-bold">40px from top modal</h2>
+            </div>
+          </Modal>
         </div>
       </div>
-
-      <Modal show={showModal} onClose={() => setShowModal(false)}>
-        <div className="w-full md:w-[400px]">
-          <p>Something to describe</p>
-          <button
-            className="border rounded p-2 mt-4"
-            onClick={() => {
-              toast.promise(
-                new Promise((resolve, reject) => {
-                  setTimeout(() => {
-                    reject(true);
-                  }, 5000);
-                }),
-                {
-                  loading: "Loading",
-                  success: "Got the data",
-                  error: "Error when fetching",
-                }
-              );
-            }}
-          >
-            Show Toast
-          </button>
-        </div>
-      </Modal>
     </div>
   );
 }

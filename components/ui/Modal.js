@@ -1,75 +1,67 @@
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { AnimatePresence, motion } from "framer-motion";
 import Portal from "@/components/Portal";
 import { IoClose } from "react-icons/io5";
+import classNames from "classnames";
 
 const Modal = (props) => {
   const {
-    title = "Modal Title",
     show,
     onClose,
-    maskClosable = false,
     children,
+    className,
+    centered = false, // Always true
+    scrollable = false,
   } = props;
 
   return (
     <Portal selector="#modal">
-      <TransitionGroup>
-        {/* Backdrop / Mask */}
+      <AnimatePresence>
         {show && (
-          <CSSTransition
-            classNames="modal-backdrop"
-            // I don't know how the way this "timout" work, but if it missing the animation is so fast and messy
-            timeout={{
-              enter: 200,
-              appear: 200,
-              exit: 1000,
-            }}
-          >
-            <div className="fixed inset-0 bg-[#212529] bg-opacity-70 z-[1000]" />
-          </CSSTransition>
-        )}
+          <div>
+            {/* backdrop */}
+            <motion.div
+              className="fixed z-0 inset-0 bg-[rgba(79,79,79,0.44)]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0, transition: { delay: 0.1 } }}
+              transition={{ type: "tween", ease: "easeIn" }}
+            />
+            {/* backdrop */}
 
-        {/* Content */}
-        {show && (
-          <CSSTransition
-            classNames="modal"
-            // I don't know how the way this "timout" work, but if it missing the animation is so fast and messy
-            timeout={400}
-          >
-            <div
-              className={`absolute z-[1001] flex w-full h-[fit-content] mt-20 overflow-auto inset-0 justify-center`}
-              onClick={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-                onClose && maskClosable && onClose();
-              }}
+            {/* modal wrapper */}
+            <motion.div
+              onClick={() => onClose && onClose()}
+              className={`fixed z-[1] inset-0 max-h-[100vh] w-full flex justify-center overflow-y-auto
+              ${classNames({ "items-center": centered && !scrollable })}
+              ${classNames({ "items-start": scrollable && !centered })} 
+              `}
             >
-              {/* Card */}
-              <div
-                className="relative p-6 min-w-[300px] w-[fit-content] max-w-[600px] bg-white rounded-md shadow-md mb-20"
+              {/* modal content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
+                transition={{ type: "tween", ease: "easeOut" }}
+                className={`relative h-fit rounded-[18px] border-2 border-gray-100 bg-white
+                ${classNames({ "my-24": scrollable })} 
+                ${className}`}
               >
-                <div className="flex items-start justify-between pr-8">
-                  <h6 className="text-xl font-medium">{title}</h6>
-
-                  {/* Close */}
-                  <button
-                    className="absolute right-6 top-6 text-lg"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      onClose && onClose();
-                    }}
-                  >
-                    <IoClose size={20} />
-                  </button>
-                </div>
-                <div>{children}</div>
-              </div>
-              {/* Card */}
-            </div>
-          </CSSTransition>
+                <motion.button
+                  type="button"
+                  className="absolute right-3 top-3"
+                  onClick={() => onClose && onClose()}
+                >
+                  <IoClose size={24} />
+                </motion.button>
+                {children}
+              </motion.div>
+              {/* modal content */}
+            </motion.div>
+            {/* modal */}
+          </div>
         )}
-      </TransitionGroup>
+      </AnimatePresence>
     </Portal>
   );
 };

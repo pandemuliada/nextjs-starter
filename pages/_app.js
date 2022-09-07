@@ -1,6 +1,5 @@
 import { RecoilRoot } from "recoil";
 import { Toaster } from "react-hot-toast";
-
 import "@/styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
