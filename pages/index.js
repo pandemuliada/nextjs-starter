@@ -35,6 +35,7 @@ export default function Home() {
     <div>
       <Head>
         <title>NextJS Starter</title>
+        <meta name="description" content="Dead simple UI components library" />
       </Head>
 
       <div className="grid grid-cols-2 p-8 gap-12">
@@ -199,6 +200,8 @@ export default function Home() {
                 Agree to this agreement
               </label>
             </div>
+
+            <Button>Submit Asoy</Button>
           </div>
         </form>
       </div>

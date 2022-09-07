@@ -1,7 +1,7 @@
 import { forwardRef, useMemo } from "react";
 
 const defaultClassName =
-  "h-[140px] w-full border border-carrara rounded-xl outline-none px-4 py-4 text-[13px] text-cod-gray placeholder:text-bombay font-normal";
+  "form-textarea h-[140px] w-full border border-carrara rounded-xl outline-none px-4 py-4 text-[13px] text-cod-gray placeholder:text-bombay placeholder:text-[14px] font-normal hover:border-primary focus:border-primary no-ring";
 
 const Textarea = (props) => {
   const {
@@ -24,7 +24,7 @@ const Textarea = (props) => {
       }
 
       if (!errorClassName) {
-        return "border border-red-500";
+        return "border border-red-500 hover:border-red-500 focus:border-red-500";
       }
     }
 
