@@ -4,47 +4,13 @@
 @tailwind utilities;
 /* Tailwind */
 
-/* Modal Styles*/
-/* Backdrop */
-.modal-backdrop-enter {
-  opacity: 0.04;
-}
-.modal-backdrop-enter.modal-backdrop-enter-active {
-  opacity: 1;
-  transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-.modal-backdrop-exit {
-  opacity: 1;
-}
-.modal-backdrop-exit.modal-backdrop-exit-active {
-  opacity: 0.01;
-  transition: all 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
-  /* Add delay, close modal first then close backdrop */
-  transition-delay: 100ms;
-}
-/* Backdrop */
-
-/* Modal */
-.modal-enter {
-  opacity: 0.01;
-  transform: translateY(40%);
+/* Remove default input password toggler for Edge & IE browser */
+.remove-password-toggler::-ms-clear,
+.remove-password-toggler::-ms-reveal {
+  display: none;
 }
 
-.modal-enter.modal-enter-active {
-  opacity: 1;
-  transform: translateY(0px);
-  transition: transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
-    opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.modal-exit {
-  opacity: 1;
-  transform: translateY(0px);
-}
-
-.modal-exit.modal-exit-active {
-  opacity: 0.01;
-  transform: translateY(40%);
-  transition: transform 500ms cubic-bezier(0.25, 0.1, 0.25, 1),
-    opacity 500ms cubic-bezier(0.25, 0.1, 0.25, 1);
+/* Remove ring from focused inputs */
+.no-ring {
+  @apply focus:ring-0 focus:ring-offset-0;
 }

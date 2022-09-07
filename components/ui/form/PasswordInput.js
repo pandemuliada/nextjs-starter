@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 
 const defaultClassName =
-  "h-[44px] w-full border border-carrara rounded-xl outline-none px-4 text-[13px] text-cod-gray placeholder:text-bombay remove-password-toggler";
+  "h-[44px] w-full border border-carrara rounded-xl outline-none px-4 text-[13px] text-cod-gray placeholder:text-bombay hover:border-primary focus:border-primary remove-password-toggler";
 
 const PasswordInput = (props) => {
   const {
@@ -27,7 +27,7 @@ const PasswordInput = (props) => {
       }
 
       if (!errorClassName) {
-        return "border border-red-500";
+        return "border border-red-500 hover:border-red-500 focus:border-red-500";
       }
     }
 

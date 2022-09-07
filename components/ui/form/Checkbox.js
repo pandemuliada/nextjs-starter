@@ -14,7 +14,7 @@ const Checkbox = (props) => {
         name={name}
         id={id || name}
         type="checkbox"
-        className={`form-checkbox w-4 h-4 text-primary bg-transparent rounded border-[2px] border-carrara without-ring ${className}`}
+        className={`form-checkbox w-4 h-4 text-primary bg-transparent rounded border-[2px] border-carrara no-ring ${className}`}
         {...register(name)}
       />
     );
@@ -26,7 +26,7 @@ const Checkbox = (props) => {
         name={name}
         id={id || name}
         type="checkbox"
-        className={`form-checkbox w-4 h-4 text-primary bg-transparent rounded border-[2px] border-carrara without-ring ${className}`}
+        className={`form-checkbox w-4 h-4 text-primary bg-transparent rounded border-[2px] border-carrara no-ring ${className}`}
         onChange={(e) => onChange(e.target.value)}
         value={value}
       />
