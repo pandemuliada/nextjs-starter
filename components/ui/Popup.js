@@ -68,7 +68,7 @@ const Trigger = (props) => {
   return (
     <div
       ref={triggerRef}
-      className="w-fit"
+      className="w-full"
       onClick={() => {
         setIsOpen(!isOpen);
         if (!isOpen) {

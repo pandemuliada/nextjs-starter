@@ -1,4 +1,3 @@
-import Icons from "@/components/icons";
 import { useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { TbCloudUpload } from "react-icons/tb";
@@ -31,7 +30,7 @@ const FileUploader = (props) => {
       <div className="max-w-[300px] px-3">
         <div className="w-[70px] h-[70px] bg-indian-khaki rounded-full p-[9px] mx-auto mb-4">
           <div className="w-full h-full bg-sandrift rounded-full flex items-center justify-center">
-            <TbCloudUpload size={30} />
+            <TbCloudUpload color="white" size={30} />
           </div>
         </div>
         <p className="leading-[24px] text-center text-white">

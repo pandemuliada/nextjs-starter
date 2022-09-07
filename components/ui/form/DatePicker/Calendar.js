@@ -1,4 +1,3 @@
-import formatDate from "@/utils/date";
 import { useCalendar } from "@h6s/calendar";
 import { format, getDate, isValid } from "date-fns";
 import { useEffect } from "react";
@@ -38,7 +37,7 @@ const getOpacity = (day) => {
 const Calendar = (props) => {
   const { onSelectDate, value } = props;
   const { headers, body, view, cursorDate, navigation } = useCalendar({
-    defaultDate: value,
+    defaultDate: value || new Date(),
   });
 
   // Show selected date when user change it from the input
@@ -54,7 +53,7 @@ const Calendar = (props) => {
   return (
     <>
       <div className="flex justify-between items-center px-2 mb-3">
-        <p>{formatDate(cursorDate, "MMM yyyy")}</p>
+        <p>{format(cursorDate, "MMM yyyy")}</p>
         <div className="flex">
           <button
             type="button"
@@ -67,7 +66,7 @@ const Calendar = (props) => {
             type="button"
             className="text-sm"
             onClick={() => {
-              onSelectDate(formatDate(new Date(), "yyyy-MM-dd"));
+              onSelectDate(format(new Date(), "yyyy-MM-dd"));
             }}
           >
             Today
@@ -86,7 +85,7 @@ const Calendar = (props) => {
         {headers.weekDays.map(({ key, value }) => {
           return (
             <span key={key} className="w-12 text-center">
-              {formatDate(value, "E")}
+              {format(value, "E")}
             </span>
           );
         })}

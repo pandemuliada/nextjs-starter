@@ -14,3 +14,8 @@
 .no-ring {
   @apply focus:ring-0 focus:ring-offset-0;
 }
+
+/* Shadow for popup */
+.popup-shadow {
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.05);
+}

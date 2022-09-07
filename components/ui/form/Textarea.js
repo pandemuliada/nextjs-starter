@@ -1,7 +1,7 @@
 import { forwardRef, useMemo } from "react";
 
 const defaultClassName =
-  "h-[44px] w-full border border-carrara rounded-xl outline-none px-4 py-4 text-[13px] text-cod-gray placeholder:text-bombay font-normal";
+  "h-[140px] w-full border border-carrara rounded-xl outline-none px-4 py-4 text-[13px] text-cod-gray placeholder:text-bombay font-normal";
 
 const Textarea = (props) => {
   const {

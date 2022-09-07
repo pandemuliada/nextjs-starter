@@ -7,13 +7,29 @@ import { useState } from "react";
 import Toast from "@/components/ui/Toast";
 import Drawer from "@/components/ui/Drawer";
 import Button from "@/components/ui/Button";
-import { Input } from "@/components/ui/form";
+import {
+  Checkbox,
+  CustomSelect,
+  DefaultSelect,
+  Input,
+} from "@/components/ui/form";
+import { useForm } from "react-hook-form";
+import Textarea from "@/components/ui/form/Textarea";
+import FileUploader from "@/components/ui/form/FileUploader";
+import DatePicker from "@/components/ui/form/DatePicker";
+
+const options = [
+  { label: "Label 1", value: 1 },
+  { label: "Label 2", value: 2 },
+];
 
 export default function Home() {
   const [showDrawer, setShowDrawer] = useState(false);
   const [showScrollableModal, setShowScrollableModal] = useState(false);
   const [showCenteredModal, setShowCenteredModal] = useState(false);
   const [showModal, setShowModal] = useState(false);
+
+  const hookForm = useForm();
 
   return (
     <div>
@@ -107,7 +123,83 @@ export default function Home() {
         <h2 className="text-3xl mb-5">Form</h2>
 
         <form>
-          <Input.Text error />
+          <div className="grid gap-4 max-w-[400px]">
+            <Input.Text
+              name="default_input"
+              register={hookForm.register}
+              placeholder="Default input"
+            />
+            <Input.Text
+              type="email"
+              name="error_input"
+              register={hookForm.register}
+              error
+              placeholder="Error input"
+            />
+            <Input.Password
+              name="default_password"
+              register={hookForm.register}
+              placeholder="Default password"
+            />
+            <Input.Password
+              name="error_password"
+              register={hookForm.register}
+              error
+              placeholder="Error password"
+              value="Password wrong"
+            />
+
+            <DatePicker
+              name="date_picker"
+              value={hookForm.watch("date_picker")}
+              onChange={(date) => hookForm.setValue("date_picker", date)}
+            />
+
+            <DefaultSelect
+              options={options}
+              name="default_select"
+              register={hookForm.register}
+            />
+            <DefaultSelect
+              options={options}
+              error
+              name="error_select"
+              register={hookForm.register}
+            />
+            <CustomSelect
+              options={options}
+              name="custom_select"
+              value={hookForm.watch("custom_select")}
+              onChange={(option) =>
+                hookForm.setValue("custom_select", option.value)
+              }
+            />
+            <CustomSelect
+              error
+              options={options}
+              name="custom_error_select"
+              value={hookForm.watch("custom_select")}
+              onChange={(option) =>
+                hookForm.setValue("custom_select", option.value)
+              }
+            />
+
+            <Textarea name="textarea" register={hookForm.register} />
+            <Textarea
+              error
+              name="error_textarea"
+              register={hookForm.register}
+            />
+
+            <FileUploader />
+
+            <div className="flex items-center cursor-pointer">
+              <Checkbox id="agree" name="agree" register={hookForm.register} />
+              <label htmlFor="agree" className="text-sm ml-2">
+                Agree to this agreement
+              </label>
+            </div>
+          </div>
         </form>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { forwardRef, useMemo } from "react";
 
 const defaultClassName =
-  "form-select h-[44px] w-full border border-carrara rounded-xl outline-none px-4 text-[13px] text-cod-gray placeholder:text-bombay no-ring focus:border-carrara";
+  "form-select h-[44px] w-full border border-carrara rounded-xl outline-none px-4 text-[13px] text-cod-gray placeholder:text-bombay no-ring hover:border-primary focus:border-primary";
 
 const DefaultSelect = (props) => {
   const {

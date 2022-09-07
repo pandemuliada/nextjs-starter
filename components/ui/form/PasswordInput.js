@@ -8,7 +8,7 @@ const PasswordInput = (props) => {
   const {
     name = null,
     id = null,
-    placeholder = "mail@website.com",
+    placeholder = "Password",
     className = "",
     register,
     value = "",

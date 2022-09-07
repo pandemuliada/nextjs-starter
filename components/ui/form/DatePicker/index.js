@@ -1,7 +1,6 @@
 import { forwardRef, useMemo } from "react";
 import Popup from "@/components/ui/Popup";
 import Calendar from "./Calendar";
-import ReactInputMask from "react-input-mask";
 
 const defaultClassName =
   "h-[44px] w-full border border-carrara rounded-xl outline-none px-4 text-[13px] text-cod-gray placeholder:text-bombay disabled:bg-white";
