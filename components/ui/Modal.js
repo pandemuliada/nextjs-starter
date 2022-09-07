@@ -43,7 +43,7 @@ const Modal = (props) => {
                 exit={{ opacity: 0, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
                 transition={{ type: "tween", ease: "easeOut" }}
-                className={`relative h-fit rounded-[18px] border-2 border-gray-100 bg-white
+                className={`relative h-fit rounded-[18px] border-2 border-carrara bg-white
                 ${classNames({ "my-24": scrollable })} 
                 ${className}`}
               >

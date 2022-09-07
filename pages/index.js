@@ -6,6 +6,7 @@ import Modal from "@/components/ui/Modal";
 import { useState } from "react";
 import Toast from "@/components/ui/Toast";
 import Drawer from "@/components/ui/Drawer";
+import Button from "@/components/ui/Button";
 
 export default function Home() {
   const [showDrawer, setShowDrawer] = useState(false);
@@ -87,12 +88,9 @@ export default function Home() {
             </div>
           </Modal>
 
-          <button
-            className="bg-gray-200 p-3 rounded mr-5 mt-5"
-            onClick={() => setShowModal(true)}
-          >
+          <Button onClick={() => setShowModal(true)} className="!w-fit mt-5">
             Show 40px from Top Modal
-          </button>
+          </Button>
           <Modal
             show={showModal}
             onClose={() => setShowModal(false)}
