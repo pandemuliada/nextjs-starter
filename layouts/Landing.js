@@ -35,7 +35,7 @@ const LandingLayout = (props) => {
 
   return (
     <>
-      <header className="sticky top-0 z-10 py-2 w-full bg-white bg-opacity-80">
+      <header className="sticky top-0 z-[1] py-2 w-full bg-white bg-opacity-80">
         <nav className="container flex justify-between items-center mx-auto">
           <Link href="/">
             <div className="relative block w-[135px] h-[80px]">
