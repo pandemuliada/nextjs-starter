@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { object, string } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Button from "@/components/ui/Button";
+import Modal from "@/components/ui/Modal";
+import { useState } from "react";
 
 const validationSchema = object({
   name: string().required("Required"),
@@ -18,17 +20,19 @@ const ContactForm = () => {
   } = useForm({
     resolver: yupResolver(validationSchema),
     defaultValues: {
-      name: "",
-      email: "",
-      message: "",
+      name: "Pande Muliada",
+      email: "pandemuliada@gmail.com",
+      message: "You're awesome!",
     },
   });
 
+  const [success, setSuccess] = useState(false);
+
   const onCommitSubmit = (values) => {
     console.log(values);
+    setSuccess(true);
   };
 
-  console.log(errors);
   return (
     <form onSubmit={handleSubmit(onCommitSubmit)}>
       <div className="mb-5">
@@ -75,6 +79,22 @@ const ContactForm = () => {
       <Button type="submit" size="lg">
         Send Message
       </Button>
+
+      <Modal
+        centered
+        show={success}
+        onClose={() => setSuccess(false)}
+        className="w-[300px]"
+      >
+        <h6 className="text-2xl font-medium mb-3">Success</h6>
+        <p className="text-gray-500 mb-5">
+          Your message has been sent successfully
+        </p>
+
+        <Button block onClick={() => setSuccess(false)}>
+          Okay
+        </Button>
+      </Modal>
     </form>
   );
 };

@@ -39,7 +39,12 @@ const LandingLayout = (props) => {
         <nav className="container flex justify-between items-center mx-auto">
           <Link href="/">
             <div className="relative block w-[135px] h-[80px]">
-              <Image src="/logo-text.webp" fill objectFit="contain" />
+              <Image
+                alt=""
+                src="/logo-text.webp"
+                fill
+                className="object-contain"
+              />
             </div>
           </Link>
 

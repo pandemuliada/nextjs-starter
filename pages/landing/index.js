@@ -1,6 +1,7 @@
 import ContactForm from "@/components/forms/ContactForm";
 import Button from "@/components/ui/Button";
 import Layout from "layouts";
+import Image from "next/image";
 import { IoChevronForward } from "react-icons/io5";
 
 const Homepage = () => {
@@ -76,8 +77,18 @@ const Homepage = () => {
             That’s enough about us, let’s talk about you.
           </h2>
           <div className="grid md:grid-cols-2 gap-5">
-            <div className="max-w-[400px] w-full">
+            <div className="md:max-w-[450px] w-full">
               <ContactForm />
+            </div>
+            <div>
+              <div className="hidden md:block relative w-full h-[300px] md:h-[500px]">
+                <Image
+                  fill
+                  src="/images/lady-working.svg"
+                  className="w-full h-full object-contain"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -10,8 +10,7 @@ const Modal = (props) => {
     onClose,
     children,
     className,
-    centered = false, // Always true
-    scrollable = false,
+    centered = false, // Default is false — modal is scrollable
   } = props;
 
   // Disable scroll when modal open
@@ -35,10 +34,10 @@ const Modal = (props) => {
             {/* modal wrapper */}
             <motion.div
               onClick={() => onClose && onClose()}
-              className={`fixed z-[1] inset-0 max-h-[100vh] w-full flex justify-center overflow-y-auto
-              ${classNames({ "items-center": centered && !scrollable })}
-              ${classNames({ "items-start": scrollable && !centered })} 
-              `}
+              className={classNames(
+                "fixed z-[1] inset-0 max-h-[100vh] w-full flex justify-center overflow-y-auto",
+                { "items-center": centered }
+              )}
             >
               {/* modal content */}
               <motion.div
@@ -47,13 +46,14 @@ const Modal = (props) => {
                 exit={{ opacity: 0, y: 20 }}
                 onClick={(e) => e.stopPropagation()}
                 transition={{ type: "tween", ease: "easeOut" }}
-                className={`relative h-fit rounded-[18px] border-2 border-carrara bg-white
-                ${classNames({ "my-24": scrollable })} 
-                ${className}`}
+                className={classNames(
+                  "relative h-fit rounded-[18px] border border-gray-300 bg-white my-24 w-[350px] p-5",
+                  className
+                )}
               >
                 <motion.button
                   type="button"
-                  className="absolute right-3 top-3"
+                  className="absolute right-5 top-5"
                   onClick={() => onClose && onClose()}
                 >
                   <IoClose size={24} />
