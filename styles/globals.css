@@ -4,6 +4,12 @@
 @tailwind utilities;
 /* Tailwind */
 
+@layer components {
+  .container {
+    @apply max-w-[1350px] w-full px-5 md:px-0;
+  }
+}
+
 /* Remove default input password toggler for Edge & IE browser */
 .remove-password-toggler::-ms-clear,
 .remove-password-toggler::-ms-reveal {

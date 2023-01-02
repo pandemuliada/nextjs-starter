@@ -1,10 +1,13 @@
 import Button from "@/components/ui/Button";
+import Layout from "layouts";
 
 const Homepage = () => {
   return (
-    <div>
-      <Button outline>Something</Button>
-    </div>
+    <Layout.Landing>
+      <div>
+        <Button outline>Something</Button>
+      </div>
+    </Layout.Landing>
   );
 };
 
