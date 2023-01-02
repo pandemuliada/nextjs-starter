@@ -40,6 +40,7 @@ const Modal = (props) => {
               )}
             >
               {/* modal content */}
+              {/* modal width will based on children width, see ContactForm.js for example */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

@@ -20,7 +20,7 @@ const PasswordInput = (props) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const style = classNames(
-    "h-[44px] w-full border border-gray-300 rounded-lg outline-none px-4 text-sm hover:border-primary focus:border-primary remove-password-toggler",
+    "h-[44px] w-full border border-gray-300 rounded-lg outline-none px-4 pr-12 text-sm hover:border-primary focus:border-primary remove-password-toggler",
     {
       "border border-red-500 hover:border-red-500 focus:border-red-500": error,
       block: block,
