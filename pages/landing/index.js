@@ -15,11 +15,14 @@ const Homepage = () => {
               software & design
             </h1>
 
-            <Button size="lg">Consult with Our Experts</Button>
+            <Button size="lg" href="/landing#contact">
+              Consult with Our Experts
+            </Button>
           </div>
           <div>
-            <div className="w-full h-[500px]">
-              <img
+            <div className="relative w-full h-[450px] md:h-[600px]">
+              <Image
+                fill
                 src="/images/teamwork.svg"
                 className="w-full h-full object-contain"
               />

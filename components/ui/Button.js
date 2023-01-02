@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import Link from "next/link";
 
 const Button = (props) => {
   const {
@@ -8,6 +9,7 @@ const Button = (props) => {
     type = "button",
     block = false,
     size = "base", // "lg"
+    href = null,
     ...rest
   } = props;
 
@@ -16,11 +18,20 @@ const Button = (props) => {
     {
       "bg-primary text-white": !outline,
       "text-primary bg-transparent": outline,
-      "w-full": block,
+      "w-full block": block,
       "h-[56px] text-base px-6": size === "lg",
+      "w-fit": href, // UI fix for link tag
     },
     className
   );
+
+  if (href) {
+    return (
+      <Link href={href} className={style}>
+        {children}
+      </Link>
+    );
+  }
 
   return (
     <button type={type} className={style} {...rest}>
