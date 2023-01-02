@@ -11,7 +11,11 @@ const FileUploader = (props) => {
 
   const onDrop = useCallback((acceptedFiles) => {
     // Do something with the files
-    console.log(acceptedFiles);
+    if (multiple) {
+      onUpload(acceptedFiles);
+    } else {
+      onUpload(acceptedFiles[0]);
+    }
   }, []);
 
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
@@ -24,12 +28,12 @@ const FileUploader = (props) => {
   return (
     <div
       {...getRootProps()}
-      className={`cursor-pointer h-[200px] w-full bg-sorrell-brown rounded-[20px] flex items-center justify-center ${className}`}
+      className={`cursor-pointer h-[200px] w-full bg-primary rounded-[20px] flex items-center justify-center ${className}`}
     >
       <input {...getInputProps()} />
       <div className="max-w-[300px] px-3">
-        <div className="w-[70px] h-[70px] bg-indian-khaki rounded-full p-[9px] mx-auto mb-4">
-          <div className="w-full h-full bg-sandrift rounded-full flex items-center justify-center">
+        <div className="w-[70px] h-[70px] bg-white rounded-full p-[9px] mx-auto mb-4">
+          <div className="w-full h-full bg-primary rounded-full flex items-center justify-center">
             <TbCloudUpload color="white" size={30} />
           </div>
         </div>

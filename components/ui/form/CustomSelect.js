@@ -34,14 +34,14 @@ const CustomSelect = (props) => {
     }),
     control: (provided, state) => ({
       ...provided,
-      borderRadius: style?.borderRadius || "12px",
+      borderRadius: style?.borderRadius || "8px",
       height: style?.height || "44px",
-      border: `solid 1px ${error ? "red" : "#EFEEEB"}`,
+      border: `solid 1px ${error ? "red" : "rgb(209 213 219)"}`,
       // borderColor: style?.borderColor || "#EFEEEB",
       boxShadow: "none",
       whiteSpace: "nowrap",
       "&:hover": {
-        borderColor: style?.borderColor || (error ? "red" : "#EFEEEB"),
+        borderColor: style?.borderColor || (error ? "red" : "rgb(209 213 219)"),
       },
       fontWeight: 400,
       padding: style?.padding || "0px 0px 0px 6px",
@@ -102,7 +102,7 @@ const CustomSelect = (props) => {
         DropdownIndicator,
         IndicatorSeparator: false,
         NoOptionsMessage: () => (
-          <div className="text-sm text-bombay px-5 py-2">No options</div>
+          <div className="text-sm text-gray-700 px-5 py-2">No options</div>
         ),
       }}
     />

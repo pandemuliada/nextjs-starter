@@ -1,7 +1,5 @@
+import classNames from "classnames";
 import { forwardRef, useMemo } from "react";
-
-const defaultClassName =
-  "form-select h-[44px] w-full border border-carrara rounded-xl outline-none px-4 text-[13px] text-cod-gray placeholder:text-bombay no-ring hover:border-primary focus:border-primary";
 
 const DefaultSelect = (props) => {
   const {
@@ -26,19 +24,13 @@ const DefaultSelect = (props) => {
     return [{ value: "", label: placeholder }];
   }, [options, placeholder]);
 
-  const formattedErrorClassName = useMemo(() => {
-    if (error) {
-      if (errorClassName) {
-        return errorClassName;
-      }
-
-      if (!errorClassName) {
-        return "border border-red-500";
-      }
-    }
-
-    return "";
-  }, [error, errorClassName]);
+  const style = classNames(
+    "form-select h-[44px] w-full border border-gray-300 rounded-lg outline-none px-4 text-sm no-ring hover:border-primary focus:border-primary",
+    {
+      "border border-red-500 hover:border-red-500 focus:border-red-500": error,
+    },
+    className
+  );
 
   if (register) {
     return (
@@ -48,7 +40,7 @@ const DefaultSelect = (props) => {
         placeholder={placeholder}
         {...register(name)}
         defaultValue={defaultValue}
-        className={`${defaultClassName} ${className} ${formattedErrorClassName}`}
+        className={style}
       >
         {combinedOptions.map((option, index) => (
           <option
@@ -71,7 +63,7 @@ const DefaultSelect = (props) => {
       defaultValue={defaultValue}
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className={`${defaultClassName} ${className} ${formattedErrorClassName}`}
+      className={style}
     >
       {combinedOptions.map((option, index) => (
         <option disabled={index === 0} key={option.value} value={option.value}>

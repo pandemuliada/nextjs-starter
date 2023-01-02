@@ -10,6 +10,13 @@
   display: none;
 }
 
+/* Remove calendar icon for date input on right side  */
+.remove-date-icone::-webkit-inner-spin-button,
+.remove-date-icone::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
 /* Remove ring from focused inputs */
 .no-ring {
   @apply focus:ring-0 focus:ring-offset-0;

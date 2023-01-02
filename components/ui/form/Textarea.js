@@ -1,7 +1,5 @@
+import classNames from "classnames";
 import { forwardRef, useMemo } from "react";
-
-const defaultClassName =
-  "form-textarea h-[140px] w-full border border-carrara rounded-xl outline-none px-4 py-4 text-[13px] text-cod-gray placeholder:text-bombay placeholder:text-[14px] font-normal hover:border-primary focus:border-primary no-ring";
 
 const Textarea = (props) => {
   const {
@@ -14,22 +12,16 @@ const Textarea = (props) => {
     onChange,
     error,
     errorClassName = "",
-    rows = 140,
+    rows = 5,
   } = props;
 
-  const formattedErrorClassName = useMemo(() => {
-    if (error) {
-      if (errorClassName) {
-        return errorClassName;
-      }
-
-      if (!errorClassName) {
-        return "border border-red-500 hover:border-red-500 focus:border-red-500";
-      }
-    }
-
-    return "";
-  }, [error, errorClassName]);
+  const style = classNames(
+    "form-textarea w-full border border-gray-300 rounded-xl outline-none px-4 py-4 text-sm placeholder:text-[14px] font-normal hover:border-primary focus:border-primary no-ring",
+    {
+      "border border-red-500 hover:border-red-500 focus:border-red-500": error,
+    },
+    className
+  );
 
   if (register) {
     return (
@@ -38,8 +30,8 @@ const Textarea = (props) => {
         id={id || name}
         placeholder={placeholder}
         {...register(name)}
-        className={`${defaultClassName} ${className} ${formattedErrorClassName}`}
         rows={rows}
+        className={style}
       />
     );
   }
@@ -51,7 +43,7 @@ const Textarea = (props) => {
       placeholder={placeholder}
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className={`${defaultClassName} ${className} ${formattedErrorClassName}`}
+      className={style}
       rows={rows}
     />
   );

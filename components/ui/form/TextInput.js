@@ -1,7 +1,5 @@
+import classNames from "classnames";
 import { forwardRef, useMemo } from "react";
-
-const defaultClassName =
-  "h-[44px] w-full border border-carrara rounded-xl outline-none px-4 text-[13px] text-cod-gray placeholder:text-bombay hover:border-primary focus:border-primary";
 
 const TextInput = (props) => {
   const {
@@ -18,19 +16,13 @@ const TextInput = (props) => {
     defaultValue = "",
   } = props;
 
-  const formattedErrorClassName = useMemo(() => {
-    if (error) {
-      if (errorClassName) {
-        return errorClassName;
-      }
-
-      if (!errorClassName) {
-        return "border border-red-500 hover:border-red-500 focus:border-red-500";
-      }
-    }
-
-    return "";
-  }, [error, errorClassName]);
+  const style = classNames(
+    "h-[44px] w-full border border-gray-300 rounded-lg outline-none px-4 text-sm hover:border-primary focus:border-primary",
+    {
+      "border border-red-500 hover:border-red-500 focus:border-red-500": error,
+    },
+    className
+  );
 
   if (register) {
     return (
@@ -41,7 +33,7 @@ const TextInput = (props) => {
         placeholder={placeholder}
         {...register(name)}
         defaultValue={defaultValue}
-        className={`${defaultClassName} ${className} ${formattedErrorClassName}`}
+        className={style}
       />
     );
   }
@@ -55,7 +47,7 @@ const TextInput = (props) => {
       value={value}
       onChange={(e) => onChange(e.target.value)}
       defaultValue={defaultValue}
-      className={`${defaultClassName} ${className} ${formattedErrorClassName}`}
+      className={style}
     />
   );
 };
