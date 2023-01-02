@@ -3,7 +3,7 @@ import { AnimatePresence, m, motion } from "framer-motion";
 import Portal from "../Portal";
 
 const Drawer = (props) => {
-  const { show, onClose, children, className, width = 400 } = props;
+  const { show, onClose, children, className, width = "400px" } = props;
 
   useDisableScroll(show);
 

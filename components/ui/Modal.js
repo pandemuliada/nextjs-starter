@@ -47,7 +47,7 @@ const Modal = (props) => {
                 onClick={(e) => e.stopPropagation()}
                 transition={{ type: "tween", ease: "easeOut" }}
                 className={classNames(
-                  "relative h-fit rounded-[18px] border border-gray-300 bg-white my-24 w-[350px] p-5",
+                  "relative h-fit rounded-[18px] border border-gray-300 bg-white my-24 w-fit p-5",
                   className
                 )}
               >

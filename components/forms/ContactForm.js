@@ -80,20 +80,17 @@ const ContactForm = () => {
         Send Message
       </Button>
 
-      <Modal
-        centered
-        show={success}
-        onClose={() => setSuccess(false)}
-        className="w-[300px]"
-      >
-        <h6 className="text-2xl font-medium mb-3">Success</h6>
-        <p className="text-gray-500 mb-5">
-          Your message has been sent successfully
-        </p>
+      <Modal centered show={success} onClose={() => setSuccess(false)}>
+        <div className="w-[300px]">
+          <h6 className="text-2xl font-medium mb-3">Success</h6>
+          <p className="text-gray-500 mb-5">
+            Your message has been sent successfully
+          </p>
 
-        <Button block onClick={() => setSuccess(false)}>
-          Okay
-        </Button>
+          <Button block onClick={() => setSuccess(false)}>
+            Okay
+          </Button>
+        </div>
       </Modal>
     </form>
   );
