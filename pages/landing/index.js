@@ -22,6 +22,7 @@ const Homepage = () => {
           <div>
             <div className="relative w-full h-[450px] md:h-[600px]">
               <Image
+                alt=""
                 fill
                 src="/images/teamwork.svg"
                 className="w-full h-full object-contain"

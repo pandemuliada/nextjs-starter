@@ -105,7 +105,65 @@ const LandingLayout = (props) => {
 
       {children}
 
-      <footer></footer>
+      <footer className="bg-primary py-8">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between">
+          <div className="flex-none md:max-w-[30%] w-full">
+            <Link href="/">
+              <div className="relative block w-[135px] h-[80px]">
+                <Image
+                  alt=""
+                  src="/logo.webp"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </Link>
+
+            <p className="text-white">
+              We give small to midsize businesses access to world class software
+              & design.
+            </p>
+          </div>
+          <div className="flex-none w-full md:max-w-[40%] pt-5">
+            <div className="md:w-[80%] mx-auto">
+              <p className="font-bold text-xl text-white">Company</p>
+
+              <div className="grid grid-cols-2 mt-8 text-white">
+                <Link href="/landing/about" className="mb-4">
+                  About
+                </Link>
+                <Link href="/landing/blog" className="mb-4">
+                  Blog
+                </Link>
+                <Link href="/landing/service" className="mb-4">
+                  Service
+                </Link>
+                <Link href="/landing/contact" className="mb-4">
+                  Contact
+                </Link>
+                <Link href="/landing/portfolio" className="mb-4">
+                  Portfolio
+                </Link>
+                <Link href="/landing/faq" className="mb-4">
+                  FAQ
+                </Link>
+                <Link href="/landing/shop" className="mb-4">
+                  Shop
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="flex-none md:max-w-[20%] pt-5">
+            <p className="font-bold text-xl text-white">Subscribe</p>
+            <div className="mt-8">
+              <p className="text-white">
+                Subscribe to stay up to date on our latest designs, articles,
+                and products!
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
