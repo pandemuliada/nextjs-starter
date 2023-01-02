@@ -18,19 +18,6 @@ module.exports = {
       colors: {
         // Octopus
         primary: "#44B598", // Keppel (https://chir.ag/projects/name-that-color/#44B598)
-        "mountain-meadow": "#16C098",
-        "cod-gray": "#151515",
-        woodsmoke: "#0C0C0D",
-        bombay: "#B5B7C0",
-        alabaster: "#F8F8F8",
-        scorpion: "#606060",
-        carrara: "#EFEEEB",
-        pampas: "#F5F4EF",
-        shark: "#292D32",
-        "sorrell-brown": "#CDBA95",
-        sandrift: "#AD9D7C",
-        "indian-khaki": "#BBAB8B",
-        "old-lace": "#FDF0E1",
         // Other colors
       },
     },
