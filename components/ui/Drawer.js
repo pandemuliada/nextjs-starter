@@ -1,8 +1,11 @@
+import { useDisableScroll } from "@/hooks";
 import { AnimatePresence, m, motion } from "framer-motion";
 import Portal from "../Portal";
 
 const Drawer = (props) => {
-  const { show, onClose, children, className } = props;
+  const { show, onClose, children, className, width = 400 } = props;
+
+  useDisableScroll(show);
 
   return (
     <Portal selector="#drawer">
@@ -23,10 +26,10 @@ const Drawer = (props) => {
             {/* drawer */}
             <motion.div
               className={`fixed z-[1] top-0 right-0 bottom-0 bg-white ${className}`}
-              style={{ width: 400 }}
-              initial={{ opacity: 0, right: -400 }}
+              style={{ width: `${width}` }}
+              initial={{ opacity: 0, right: `-${width}` }}
               animate={{ opacity: 1, right: 0 }}
-              exit={{ opacity: 0, right: -400 }}
+              exit={{ opacity: 0, right: `-${width}` }}
               transition={{ type: "tween", duration: 0.4, ease: "easeInOut" }}
             >
               {children}

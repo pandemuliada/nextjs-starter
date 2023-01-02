@@ -9,6 +9,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Starter</title>
         <meta name="description" content="Awesome nextjs starter project" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
 
       {/* React Host Toast Root */}
