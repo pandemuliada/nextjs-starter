@@ -2,9 +2,7 @@ import { forwardRef, useMemo } from "react";
 import Popup from "@/components/ui/Popup";
 import Calendar from "./Calendar";
 import classNames from "classnames";
-
-const defaultClassName =
-  "h-[44px] w-full border border-carrara rounded-xl outline-none px-4 text-[13px] text-cod-gray placeholder:text-bombay disabled:bg-white";
+import { IoCalendar } from "react-icons/io5";
 
 const DatePicker = (props) => {
   const {
@@ -20,22 +18,8 @@ const DatePicker = (props) => {
     defaultValue = "",
   } = props;
 
-  const formattedErrorClassName = useMemo(() => {
-    if (error) {
-      if (errorClassName) {
-        return errorClassName;
-      }
-
-      if (!errorClassName) {
-        return "border border-red-500";
-      }
-    }
-
-    return "";
-  }, [error, errorClassName]);
-
   const style = classNames(
-    "h-[44px] w-full border border-gray-300 rounded-lg outline-none px-4 text-sm hover:border-primary focus:border-primary remove-date-icon",
+    "h-[44px] bg-white text-left w-full border border-gray-300 rounded-lg outline-none px-4 text-sm hover:border-primary focus:border-primary input-date remove-date-icon",
     {
       "border border-red-500 hover:border-red-500 focus:border-red-500": error,
     },
@@ -46,16 +30,21 @@ const DatePicker = (props) => {
     <div className="w-full">
       <Popup
         trigger={
-          <input
-            type="date"
-            name={name}
-            id={id || name}
-            placeholder={placeholder}
-            value={value}
-            onChange={(e) => onChange(e.target.value)}
-            className={style}
-            onClick={(e) => e.preventDefault()} // Prevent opening the default date picker on safari
-          />
+          <div className="relative">
+            <input
+              type="date"
+              name={name}
+              id={id || name}
+              placeholder={placeholder}
+              value={value}
+              onChange={(e) => onChange(e.target.value)}
+              className={style}
+              onClick={(e) => e.preventDefault()} // Prevent opening the default date picker on safari
+            />
+            <div className="cursor-pointer w-[20px] text-gray-500 absolute right-4 top-1/2 -translate-y-1/2">
+              <IoCalendar size="100%" />
+            </div>
+          </div>
         }
       >
         <div className="w-[300px] bg-white p-5 rounded-lg popup-shadow">

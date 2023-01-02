@@ -19,8 +19,8 @@
 }
 
 /* Remove calendar icon for date input on right side  */
-.remove-date-icone::-webkit-inner-spin-button,
-.remove-date-icone::-webkit-calendar-picker-indicator {
+.remove-date-icon::-webkit-inner-spin-button,
+.remove-date-icon::-webkit-calendar-picker-indicator {
   display: none;
   -webkit-appearance: none;
 }
