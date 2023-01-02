@@ -17,7 +17,7 @@ module.exports = {
       },
       colors: {
         // Octopus
-        primary: "#44B598", // Keppel (https://chir.ag/projects/name-that-color/#44B598)
+        primary: "#A2C2E5", // Keppel (https://chir.ag/projects/name-that-color/#44B598)
         // Other colors
       },
     },

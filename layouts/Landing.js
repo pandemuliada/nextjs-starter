@@ -30,7 +30,7 @@ const LandingLayout = (props) => {
 
   return (
     <>
-      <header className="py-2 sticky top-0 w-full">
+      <header className="py-2 sticky top-0 w-full bg-transparent">
         <nav className="container flex justify-between items-center mx-auto">
           <Link href="/">
             <div className="relative block w-[135px] h-[80px]">
@@ -38,9 +38,13 @@ const LandingLayout = (props) => {
             </div>
           </Link>
 
-          <div className="flex items-center flex-wrap">
+          <div className="hidden md:flex items-center flex-wrap">
             {menus.map((menu) => (
-              <Link key={menu.id} href={menu.url} className="mr-8 last:mr-0">
+              <Link
+                key={menu.id}
+                href={`/landing/${menu.url}`}
+                className="mr-8 last:mr-0"
+              >
                 {menu.label}
               </Link>
             ))}
