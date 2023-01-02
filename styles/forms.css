@@ -1,0 +1,9 @@
+@layer components {
+  .label {
+    @apply text-sm block;
+  }
+
+  .error-text {
+    @apply text-red-400 text-sm block;
+  }
+}

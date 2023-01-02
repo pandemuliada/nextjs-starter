@@ -1,3 +1,4 @@
+import ContactForm from "@/components/forms/ContactForm";
 import Button from "@/components/ui/Button";
 import Layout from "layouts";
 import { IoChevronForward } from "react-icons/io5";
@@ -65,6 +66,19 @@ const Homepage = () => {
           </div>
           <div className="md:hidden flex justify-center mt-8">
             <Button>Learn More</Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-24">
+        <div className="container mx-auto">
+          <h2 className="text-5xl font-medium max-w-[500px] mb-8">
+            That’s enough about us, let’s talk about you.
+          </h2>
+          <div className="grid md:grid-cols-2 gap-5">
+            <div className="max-w-[400px] w-full">
+              <ContactForm />
+            </div>
           </div>
         </div>
       </section>

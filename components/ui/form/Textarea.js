@@ -11,14 +11,16 @@ const Textarea = (props) => {
     value = "",
     onChange,
     error,
+    block = false,
     errorClassName = "",
     rows = 5,
   } = props;
 
   const style = classNames(
-    "form-textarea w-full border border-gray-300 rounded-xl outline-none px-4 py-4 text-sm placeholder:text-[14px] font-normal hover:border-primary focus:border-primary no-ring",
+    "form-textarea w-full border border-gray-300 rounded-xl outline-none px-4 py-4 text-sm placeholder:text-sm font-normal hover:border-primary focus:border-primary no-ring",
     {
       "border border-red-500 hover:border-red-500 focus:border-red-500": error,
+      block: block,
     },
     className
   );

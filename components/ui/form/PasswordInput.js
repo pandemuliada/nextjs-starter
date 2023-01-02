@@ -12,6 +12,7 @@ const PasswordInput = (props) => {
     value = "",
     onChange,
     error,
+    block = false,
     errorClassName = "",
     defaultValue = "",
   } = props;
@@ -22,6 +23,7 @@ const PasswordInput = (props) => {
     "h-[44px] w-full border border-gray-300 rounded-lg outline-none px-4 text-sm hover:border-primary focus:border-primary remove-password-toggler",
     {
       "border border-red-500 hover:border-red-500 focus:border-red-500": error,
+      block: block,
     },
     className
   );

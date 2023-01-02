@@ -6,12 +6,13 @@ const TextInput = (props) => {
     type = "text", // text | email | date
     name = null,
     id = null,
-    placeholder = "mail@website.com",
+    placeholder = "mail@yoursite.com",
     className = "",
     register,
     value = "",
     onChange,
     error,
+    block = false,
     errorClassName = "",
     defaultValue = "",
   } = props;
@@ -20,6 +21,7 @@ const TextInput = (props) => {
     "h-[44px] w-full border border-gray-300 rounded-lg outline-none px-4 text-sm hover:border-primary focus:border-primary",
     {
       "border border-red-500 hover:border-red-500 focus:border-red-500": error,
+      block: block,
     },
     className
   );
