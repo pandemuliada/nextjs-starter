@@ -145,9 +145,10 @@ const EcommerceLayout = (props) => {
           show={openCart}
           onClose={() => setOpenCart(false)}
           width="350px"
-          className="pt-8 px-8"
         >
-          <h4 className="font-bold text-xl">Your Cart (5)</h4>
+          <div className="pt-8 pb-6 px-8 border-b">
+            <h4 className="font-bold text-xl">Your Cart (5)</h4>
+          </div>
           <CartContainer />
         </Drawer>
       </header>
