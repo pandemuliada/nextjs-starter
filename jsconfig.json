@@ -5,6 +5,7 @@
       "@/hooks": ["hooks/index"],
 
       "@/components/*": ["components/*"],
+      "@/layouts/*": ["layouts/*"],
       "@/hooks/*": ["hooks/*"],
       "@/pages/*": ["pages/*"],
       "@/public/*": ["public/*"],

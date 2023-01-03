@@ -18,7 +18,7 @@ const Eccomerce = () => {
   }, []);
 
   return (
-    <Layout.Landing>
+    <Layout.Ecommerce>
       <section id="hero" className="bg-gray-300 min-h-[600px]">
         <div className="container mx-auto"></div>
       </section>
@@ -51,7 +51,7 @@ const Eccomerce = () => {
           })}
         </div>
       </section>
-    </Layout.Landing>
+    </Layout.Ecommerce>
   );
 };
 

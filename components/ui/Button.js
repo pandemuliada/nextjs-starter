@@ -18,9 +18,9 @@ const Button = (props) => {
     {
       "bg-primary text-white": !outline,
       "text-primary bg-transparent": outline,
-      "w-full block": block,
       "h-[56px] text-base px-6": size === "lg",
-      "w-fit": href, // UI fix for link tag
+      "w-fit": href && !block, // UI fix for link tag
+      "w-full flex": block,
     },
     className
   );

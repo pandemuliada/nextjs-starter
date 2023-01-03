@@ -14,7 +14,7 @@ const Drawer = (props) => {
           <div>
             {/* backdrop */}
             <motion.div
-              className="fixed z-[1] inset-0 bg-black bg-opacity-20"
+              className="fixed z-[2] inset-0 bg-black bg-opacity-20"
               onClick={() => onClose()}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -25,7 +25,7 @@ const Drawer = (props) => {
 
             {/* drawer */}
             <motion.div
-              className={`fixed z-[1] top-0 right-0 bottom-0 bg-white ${className}`}
+              className={`fixed z-[2] top-0 right-0 bottom-0 bg-white ${className}`}
               style={{ width: `${width}` }}
               initial={{ opacity: 0, right: `-${width}` }}
               animate={{ opacity: 1, right: 0 }}
