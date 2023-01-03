@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { IoCart, IoClose, IoHeart, IoMenu, IoPerson } from "react-icons/io5";
 import { CgBox } from "react-icons/cg";
+import CartContainer from "@/containers/CartContainer";
 
 const menus = [
   {
@@ -147,6 +148,7 @@ const EcommerceLayout = (props) => {
           className="pt-8 px-8"
         >
           <h4 className="font-bold text-xl">Your Cart (5)</h4>
+          <CartContainer />
         </Drawer>
       </header>
 

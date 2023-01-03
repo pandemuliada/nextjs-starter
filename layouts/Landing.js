@@ -87,7 +87,10 @@ const LandingLayout = (props) => {
           </button>
         </div>
 
-        <div className="flex flex-col justify-between h-[calc(100%-120px)]">
+        <div
+          className="flex flex-col justify-between"
+          style={{ height: "calc(100% - 50px)" }}
+        >
           <div className="flex flex-col items-start">
             {menus.map((menu) => (
               <Link

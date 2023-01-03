@@ -5,7 +5,9 @@
       "@/hooks": ["hooks/index"],
 
       "@/components/*": ["components/*"],
+      "@/data/*": ["data/*"],
       "@/layouts/*": ["layouts/*"],
+      "@/containers/*": ["containers/*"],
       "@/hooks/*": ["hooks/*"],
       "@/pages/*": ["pages/*"],
       "@/public/*": ["public/*"],
