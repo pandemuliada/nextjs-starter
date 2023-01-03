@@ -2,9 +2,9 @@ import Layout from "layouts";
 
 const ProductDetailPage = () => {
   return (
-    <Layout.Landing>
+    <Layout.Ecommerce>
       <section className="min-h-screen"></section>
-    </Layout.Landing>
+    </Layout.Ecommerce>
   );
 };
 

@@ -98,7 +98,7 @@ const EcommerceLayout = (props) => {
     <>
       <header className="sticky top-0 z-[2] w-full bg-white border-b">
         <nav className="container flex items-center justify-between mx-auto">
-          <Link href="/">
+          <Link href="/ecommerce">
             <div className="relative block w-[110px] h-[70px]">
               <Image
                 alt=""
