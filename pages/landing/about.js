@@ -1,4 +1,4 @@
-import Layout from "@/layouts/index";
+import Layout from "@/layouts";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 

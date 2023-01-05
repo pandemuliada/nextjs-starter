@@ -22,10 +22,15 @@ const menus = [
     url: "/portfolio",
   },
   {
-    label: "Blog",
-    id: "blog",
-    url: "/blog",
+    label: "FAQ",
+    id: "faq",
+    url: "/faq",
   },
+  // {
+  //   label: "Blog",
+  //   id: "blog",
+  //   url: "/blog",
+  // },
 ];
 
 const LandingLayout = (props) => {
@@ -37,7 +42,7 @@ const LandingLayout = (props) => {
     <>
       <header className="sticky top-0 z-[1] py-2 w-full bg-white bg-opacity-80">
         <nav className="container flex justify-between items-center mx-auto">
-          <Link href="/">
+          <Link href="/landing">
             <div className="relative block w-[135px] h-[80px]">
               <Image
                 alt=""
@@ -59,7 +64,7 @@ const LandingLayout = (props) => {
               </Link>
             ))}
 
-            <Button>Contact</Button>
+            <Button href="/landing/contact">Contact</Button>
           </div>
           <div className="md:hidden">
             <button
@@ -89,7 +94,7 @@ const LandingLayout = (props) => {
 
         <div
           className="flex flex-col justify-between"
-          style={{ height: "calc(100% - 50px)" }}
+          style={{ height: "calc(100vh - 120px)" }}
         >
           <div className="flex flex-col items-start">
             {menus.map((menu) => (
@@ -102,7 +107,7 @@ const LandingLayout = (props) => {
               </Link>
             ))}
           </div>
-          <Button>Contact</Button>
+          <Button href="/landing/contact">Contact</Button>
         </div>
       </Drawer>
 
@@ -111,7 +116,7 @@ const LandingLayout = (props) => {
       <footer className="bg-primary py-8">
         <div className="container mx-auto flex flex-col md:flex-row justify-between">
           <div className="flex-none md:max-w-[30%] w-full">
-            <Link href="/">
+            <Link href="/landing">
               <div className="relative block w-[135px] h-[80px]">
                 <Image
                   alt=""
@@ -135,9 +140,9 @@ const LandingLayout = (props) => {
                 <Link href="/landing/about" className="mb-4">
                   About
                 </Link>
-                <Link href="/landing/blog" className="mb-4">
+                {/* <Link href="/landing/blog" className="mb-4">
                   Blog
-                </Link>
+                </Link> */}
                 <Link href="/landing/service" className="mb-4">
                   Service
                 </Link>
