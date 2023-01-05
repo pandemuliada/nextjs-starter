@@ -7,7 +7,7 @@ const nextConfig = {
   },
   // Add your image storage here when using next/image
   images: {
-    domains: ["i.dummyjson.com"],
+    domains: ["i.dummyjson.com", "yellotek.com", "res.cloudinary.com"],
   },
 };
 

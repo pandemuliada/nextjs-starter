@@ -12,12 +12,13 @@ const CartContainer = () => {
       style={{ height: "calc(100% - 50px)" }}
     >
       <div className="pt-8 px-8">
-        {[...products, ...products].map((product) => (
+        {products.map((product) => (
           <div key={product.id} className="flex mb-5">
             <div className="flex-none w-20 h-20 rounded-lg relative overflow-hidden border">
               {product.thumbnail && (
                 <Image
                   src={product.thumbnail}
+                  alt={product.title}
                   fill
                   className="w-full h-full object-cover block"
                 />
