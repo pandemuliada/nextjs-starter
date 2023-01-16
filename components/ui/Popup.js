@@ -5,14 +5,22 @@ import { AnimatePresence, motion } from "framer-motion";
 const PopupContext = createContext({});
 
 const usePopup = () => {
-  const { isOpen, setIsOpen, collapseAfterClick, position, onOpen, onClose } =
-    useContext(PopupContext);
+  const {
+    isOpen,
+    setIsOpen,
+    collapseAfterClick,
+    position,
+    onOpen,
+    width,
+    onClose,
+  } = useContext(PopupContext);
 
   return {
     isOpen,
     setIsOpen,
     collapseAfterClick,
     position,
+    width,
     onOpen,
     onClose,
   };
@@ -26,6 +34,7 @@ const Popup = (props) => {
     onClose,
     collapseAfterClick = false,
     position = { top: 60, left: 0 },
+    width = "auto",
   } = props;
   const [isOpen, setIsOpen] = useState(false);
 
@@ -46,6 +55,7 @@ const Popup = (props) => {
         position,
         onOpen,
         onClose,
+        width,
       }}
     >
       {/* The trigger modal will relative to trigger component */}
@@ -84,7 +94,7 @@ const Trigger = (props) => {
 };
 
 const Modal = (props) => {
-  const { isOpen, setIsOpen, collapseAfterClick, position, onClose } =
+  const { isOpen, setIsOpen, collapseAfterClick, position, onClose, width } =
     usePopup();
 
   return (
@@ -94,7 +104,7 @@ const Modal = (props) => {
         {isOpen && (
           <motion.div
             className="absolute z-[1]"
-            style={{ ...position }}
+            style={{ ...position, width }}
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}

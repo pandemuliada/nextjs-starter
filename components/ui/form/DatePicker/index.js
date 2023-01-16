@@ -29,10 +29,12 @@ const DatePicker = (props) => {
   return (
     <div className="w-full">
       <Popup
+        width="100%"
         trigger={
           <div className="relative">
             <input
-              type="date"
+              type="text"
+              disabled
               name={name}
               id={id || name}
               placeholder={placeholder}
@@ -47,12 +49,14 @@ const DatePicker = (props) => {
           </div>
         }
       >
-        <div className="w-[300px] bg-white p-5 rounded-lg popup-shadow">
-          <Calendar
-            value={value}
-            defaultValue={defaultValue}
-            onSelectDate={(date) => onChange(date)}
-          />
+        <div className="w-full flex justify-end">
+          <div className="w-max bg-white p-5 rounded-lg popup-shadow">
+            <Calendar
+              value={value}
+              defaultValue={defaultValue}
+              onSelectDate={(date) => onChange(date)}
+            />
+          </div>
         </div>
       </Popup>
     </div>

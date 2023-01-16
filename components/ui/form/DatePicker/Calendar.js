@@ -51,7 +51,7 @@ const Calendar = (props) => {
   }, [value]);
 
   return (
-    <>
+    <div>
       <div className="flex justify-between items-center px-2 mb-3">
         <p>{format(cursorDate, "MMM yyyy")}</p>
         <div className="flex">
@@ -84,7 +84,7 @@ const Calendar = (props) => {
       <div className="flex w-full mb-1">
         {headers.weekDays.map(({ key, value }) => {
           return (
-            <span key={key} className="w-12 text-center">
+            <span key={key} className="w-10 text-center text-sm">
               {format(value, "E")}
             </span>
           );
@@ -108,11 +108,12 @@ const Calendar = (props) => {
               return (
                 <span
                   key={key}
-                  className={`w-12 h-12 text-center cursor-pointer hover:bg-sandrift hover:bg-opacity-25 flex items-center justify-center rounded-full ${activeClass}`}
+                  className={`w-10 h-10 text-center text-sm cursor-pointer hover:bg-sandrift hover:bg-opacity-25 flex items-center justify-center rounded-full ${activeClass}`}
                   style={{
                     opacity: getOpacity(day),
                     fontWeight: isCurrentDate ? 700 : 400,
-                    color: getColor(day),
+                    color: isCurrentDate ? "white" : getColor(day),
+                    background: isCurrentDate ? "#A2C2E5" : "transparent",
                   }}
                   onClick={() => onSelectDate(format(value, "yyyy-MM-dd"))}
                 >
@@ -123,7 +124,7 @@ const Calendar = (props) => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
