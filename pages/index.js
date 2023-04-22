@@ -17,6 +17,7 @@ import Textarea from "@/components/ds/form/Textarea";
 import FileUploader from "@/components/ds/form/FileUploader";
 import DatePicker from "@/components/ds/form/DatePicker";
 import RangeDatePicker from "@/components/ds/form/RangeDatePicker";
+import MyModal from "@/components/ds/MyModal";
 
 const options = [
   { label: "Label 1", value: 1 },
@@ -108,7 +109,34 @@ export default function Home() {
           <Button onClick={() => setShowModal(true)} className="!w-fit mt-5">
             Show 40px from Top Modal
           </Button>
-          <Modal
+
+          <MyModal
+            show={showModal}
+            onClose={() => setShowModal(false)}
+            className="p-6"
+          >
+            <h3 className="text-lg font-medium leading-6 text-gray-900">
+              Payment successful
+            </h3>
+            <div className="mt-2">
+              <p className="text-sm text-gray-500">
+                Your payment has been successfully submitted. We’ve sent you an
+                email with all of the details of your order.
+              </p>
+            </div>
+
+            <div className="mt-4">
+              <button
+                type="button"
+                className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                onClick={() => setShowModal(false)}
+              >
+                Got it, thanks!
+              </button>
+            </div>
+          </MyModal>
+
+          {/* <Modal
             show={showModal}
             onClose={() => setShowModal(false)}
             className="mt-10"
@@ -116,7 +144,7 @@ export default function Home() {
             <div className="w-[650px] h-[500px] p-6">
               <h2 className="font-bold">40px from top modal</h2>
             </div>
-          </Modal>
+          </Modal> */}
         </div>
       </div>
 
