@@ -1,5 +1,5 @@
 import ContactForm from "@/components/forms/ContactForm";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ds/Button";
 import Layout from "layouts";
 import Image from "next/image";
 import { IoChevronForward } from "react-icons/io5";

@@ -1,4 +1,4 @@
-import Button from "@/components/ui/Button";
+import Button from "@/components/ds/Button";
 import dummyProducts from "@/data/dummy-products";
 import Image from "next/image";
 import { useState } from "react";

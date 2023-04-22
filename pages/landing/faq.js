@@ -1,6 +1,6 @@
 import ContactForm from "@/components/forms/ContactForm";
 import Markdown from "@/components/Markdown";
-import Collapsible from "@/components/ui/Collapsible";
+import Collapsible from "@/components/ds/Collapsible";
 import Layout from "@/layouts";
 import { useEffect, useState } from "react";
 
@@ -9,7 +9,7 @@ const FAQPage = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.yellotek.com/api/faqs?populate%5B0%5D=%2A&sort%5B0%5D=id&pagination%5Bpage%5D=1&pagination%5BpageSize%5D=25"
+      "https://api.yellotek.com/api/faqs?populate%5B0%5D=%2A&sort%5B0%5D=id&pagination%5Bpage%5D=1&pagination%5BpageSize%5D=25",
     )
       .then((res) => res.json())
       .then((res) => setFaqs(res.data));

@@ -1,6 +1,6 @@
-import Button from "@/components/ui/Button";
-import Drawer from "@/components/ui/Drawer";
-import { CustomSelect, Input } from "@/components/ui/form";
+import Button from "@/components/ds/Button";
+import Drawer from "@/components/ds/Drawer";
+import { CustomSelect, Input } from "@/components/ds/form";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";

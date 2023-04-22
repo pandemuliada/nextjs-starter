@@ -1,9 +1,9 @@
-import { Input } from "@/components/ui/form";
+import { Input } from "@/components/ds/form";
 import { useForm } from "react-hook-form";
 import { object, string } from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Button from "@/components/ui/Button";
-import Modal from "@/components/ui/Modal";
+import Button from "@/components/ds/Button";
+import Modal from "@/components/ds/Modal";
 import { useState } from "react";
 
 const validationSchema = object({

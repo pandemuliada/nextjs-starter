@@ -33,7 +33,7 @@ const Item = (props) => {
       className={classNames(
         "border p-5 rounded-xl transition-all",
         { "border-primary": openedItem == id },
-        className
+        className,
       )}
       {...restProps}
     >

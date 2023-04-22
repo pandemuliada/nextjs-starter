@@ -1,5 +1,5 @@
 import { forwardRef, useMemo } from "react";
-import Popup from "@/components/ui/Popup";
+import Popup from "@/components/ds/Popup";
 import Calendar from "./Calendar";
 import classNames from "classnames";
 import { IoCalendar } from "react-icons/io5";
@@ -23,7 +23,7 @@ const DatePicker = (props) => {
     {
       "border border-red-500 hover:border-red-500 focus:border-red-500": error,
     },
-    className
+    className,
   );
 
   return (

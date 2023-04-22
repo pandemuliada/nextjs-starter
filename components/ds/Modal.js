@@ -36,7 +36,7 @@ const Modal = (props) => {
               onClick={() => onClose && onClose()}
               className={classNames(
                 "fixed z-[1] inset-0 max-h-[100vh] w-full flex justify-center overflow-y-auto",
-                { "items-center": centered }
+                { "items-center": centered },
               )}
             >
               {/* modal content */}
@@ -49,7 +49,7 @@ const Modal = (props) => {
                 transition={{ type: "tween", ease: "easeOut" }}
                 className={classNames(
                   "relative h-fit rounded-[18px] border border-gray-300 bg-white my-24 w-fit p-5",
-                  className
+                  className,
                 )}
               >
                 <motion.button

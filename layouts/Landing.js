@@ -1,5 +1,5 @@
-import Button from "@/components/ui/Button";
-import Drawer from "@/components/ui/Drawer";
+import Button from "@/components/ds/Button";
+import Drawer from "@/components/ds/Drawer";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";

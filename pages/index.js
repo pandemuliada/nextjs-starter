@@ -1,22 +1,22 @@
 import Head from "next/head";
 import Image from "next/image";
 import toast from "react-hot-toast";
-import Modal from "@/components/ui/Modal";
+import Modal from "@/components/ds/Modal";
 import { useState } from "react";
-import Toast from "@/components/ui/Toast";
-import Drawer from "@/components/ui/Drawer";
-import Button from "@/components/ui/Button";
+import Toast from "@/components/ds/Toast";
+import Drawer from "@/components/ds/Drawer";
+import Button from "@/components/ds/Button";
 import {
   Checkbox,
   CustomSelect,
   DefaultSelect,
   Input,
-} from "@/components/ui/form";
+} from "@/components/ds/form";
 import { useForm } from "react-hook-form";
-import Textarea from "@/components/ui/form/Textarea";
-import FileUploader from "@/components/ui/form/FileUploader";
-import DatePicker from "@/components/ui/form/DatePicker";
-import RangeDatePicker from "@/components/ui/form/RangeDatePicker";
+import Textarea from "@/components/ds/form/Textarea";
+import FileUploader from "@/components/ds/form/FileUploader";
+import DatePicker from "@/components/ds/form/DatePicker";
+import RangeDatePicker from "@/components/ds/form/RangeDatePicker";
 
 const options = [
   { label: "Label 1", value: 1 },

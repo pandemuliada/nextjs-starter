@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@h6s/calendar": "^1.0.5",
+    "@headlessui/react": "^1.7.14",
     "@hookform/resolvers": "^2.9.10",
     "@logtail/browser": "^0.1.12",
     "@rehookify/datepicker": "^2.1.2",
