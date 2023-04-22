@@ -16,6 +16,7 @@ import { useForm } from "react-hook-form";
 import Textarea from "@/components/ui/form/Textarea";
 import FileUploader from "@/components/ui/form/FileUploader";
 import DatePicker from "@/components/ui/form/DatePicker";
+import RangeDatePicker from "@/components/ui/form/RangeDatePicker";
 
 const options = [
   { label: "Label 1", value: 1 },
@@ -154,6 +155,9 @@ export default function Home() {
               value={hookForm.watch("date_picker")}
               onChange={(date) => hookForm.setValue("date_picker", date)}
             />
+
+            <label className="block">Range Date Picker</label>
+            <RangeDatePicker />
 
             <DefaultSelect
               options={options}

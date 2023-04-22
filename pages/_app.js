@@ -1,7 +1,8 @@
-import { RecoilRoot } from "recoil";
-import { Toaster } from "react-hot-toast";
-import "@/styles/globals.css";
-import Head from "next/head";
+import { RecoilRoot } from 'recoil';
+import { Toaster } from 'react-hot-toast';
+import '@/styles/globals.css';
+import Head from 'next/head';
+import 'react-day-picker/dist/style.css';
 
 function MyApp({ Component, pageProps }) {
   return (
