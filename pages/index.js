@@ -106,7 +106,7 @@ export default function Home() {
             onClose={() => setShowCenteredModal(false)}
             className="mt-8"
           >
-            <div className="w-[650px] h-[1500px] p-6">
+            <div className="w-[650px] h-[500px] p-6">
               <h2 className="font-bold">Centered Modal</h2>
             </div>
           </Modal>
