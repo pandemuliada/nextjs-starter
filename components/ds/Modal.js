@@ -10,7 +10,7 @@ const Modal = (props) => {
     onClose,
     children,
     className,
-    centered = false, // Default is false — modal is scrollable
+    variant = "default", // default | scrollable | centered
   } = props;
 
   // Disable scroll when modal open
@@ -35,8 +35,9 @@ const Modal = (props) => {
             <motion.div
               onClick={() => onClose && onClose()}
               className={classNames(
-                "fixed z-[1] inset-0 max-h-[100vh] w-full flex justify-center overflow-y-auto",
-                { "items-center": centered },
+                "fixed z-[1] inset-0 max-h-[100vh] w-full flex justify-center",
+                { "items-center": variant === "centered" },
+                { "overflow-y-auto": variant === "scrollable" },
               )}
             >
               {/* modal content */}
@@ -48,7 +49,7 @@ const Modal = (props) => {
                 onClick={(e) => e.stopPropagation()}
                 transition={{ type: "tween", ease: "easeOut" }}
                 className={classNames(
-                  "relative h-fit rounded-[18px] border border-gray-300 bg-white my-24 w-fit p-5",
+                  "relative h-fit rounded-[18px] border border-gray-300 bg-white w-fit p-5",
                   className,
                 )}
               >

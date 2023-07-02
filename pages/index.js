@@ -13,7 +13,6 @@ import {
   Input,
 } from "@/components/ds/form";
 import { useForm } from "react-hook-form";
-import Textarea from "@/components/ds/form/Textarea";
 import FileUploader from "@/components/ds/form/FileUploader";
 import DatePicker from "@/components/ds/form/DatePicker";
 import RangeDatePicker from "@/components/ds/form/RangeDatePicker";
@@ -69,7 +68,12 @@ export default function Home() {
           >
             Show Drawer
           </button>
-          <Drawer show={showDrawer} onClose={() => setShowDrawer(false)}>
+          <Drawer
+            placement="right"
+            size="40%"
+            show={showDrawer}
+            onClose={() => setShowDrawer(false)}
+          >
             <button onClick={() => setShowDrawer(false)}>Exit</button>
           </Drawer>
 
@@ -80,8 +84,9 @@ export default function Home() {
             Show Scrollable Modal
           </button>
           <Modal
-            scrollable
+            variant="scrollable"
             show={showScrollableModal}
+            className="my-24"
             onClose={() => setShowScrollableModal(false)}
           >
             <div className="w-[650px] h-[1200px] p-6">
@@ -96,12 +101,12 @@ export default function Home() {
             Show Centered Modal
           </button>
           <Modal
-            centered
+            variant="centered"
             show={showCenteredModal}
             onClose={() => setShowCenteredModal(false)}
             className="mt-8"
           >
-            <div className="w-[650px] h-[500px] p-6">
+            <div className="w-[650px] h-[1500px] p-6">
               <h2 className="font-bold">Centered Modal</h2>
             </div>
           </Modal>
@@ -110,31 +115,33 @@ export default function Home() {
             Show 40px from Top Modal
           </Button>
 
-          <MyModal
+          <Modal
             show={showModal}
             onClose={() => setShowModal(false)}
-            className="p-6"
+            className="mt-10"
           >
-            <h3 className="text-lg font-medium leading-6 text-gray-900">
-              Payment successful
-            </h3>
-            <div className="mt-2">
-              <p className="text-sm text-gray-500">
-                Your payment has been successfully submitted. We’ve sent you an
-                email with all of the details of your order.
-              </p>
-            </div>
+            <div className="w-[400px]">
+              <h3 className="text-lg font-medium leading-6 text-gray-900">
+                Payment successful
+              </h3>
+              <div className="mt-2">
+                <p className="text-sm text-gray-500">
+                  Your payment has been successfully submitted. We’ve sent you
+                  an email with all of the details of your order.
+                </p>
+              </div>
 
-            <div className="mt-4">
-              <button
-                type="button"
-                className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                onClick={() => setShowModal(false)}
-              >
-                Got it, thanks!
-              </button>
+              <div className="mt-4">
+                <button
+                  type="button"
+                  className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                  onClick={() => setShowModal(false)}
+                >
+                  Got it, thanks!
+                </button>
+              </div>
             </div>
-          </MyModal>
+          </Modal>
 
           {/* <Modal
             show={showModal}
@@ -216,8 +223,8 @@ export default function Home() {
               }
             />
 
-            <Textarea name="textarea" register={hookForm.register} />
-            <Textarea
+            <Input.Textarea name="textarea" register={hookForm.register} />
+            <Input.Textarea
               error
               name="error_textarea"
               register={hookForm.register}

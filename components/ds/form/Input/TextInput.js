@@ -3,12 +3,12 @@ import { forwardRef, useMemo } from "react";
 
 const TextInput = (props) => {
   const {
-    type = "text", // text | email | date
+    type = "text", // text | email
     name = null,
     id = null,
-    placeholder = "mail@yoursite.com",
+    placeholder = "Your placeholder",
     className = "",
-    register,
+    register, // for react-hook-form integration
     value = "",
     onChange,
     error,
@@ -23,7 +23,7 @@ const TextInput = (props) => {
       "border border-red-500 hover:border-red-500 focus:border-red-500": error,
       block: block,
     },
-    className
+    className,
   );
 
   if (register) {
