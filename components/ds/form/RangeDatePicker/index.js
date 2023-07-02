@@ -38,11 +38,9 @@ const RangeDatePicker = () => {
           ))}
         </ul>
       </header>
-      {console.log(selectedDates[0])}
       <ul className="grid grid-cols-7">
         {days.map((dpDay) => (
           <li key={`${month}-${dpDay.date}`}>
-            {console.log(dpDay.$date == selectedDates[0])}
             <div
               {...dayButton(dpDay)}
               className={classNames("text-center", {

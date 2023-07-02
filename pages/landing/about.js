@@ -7,7 +7,7 @@ const AboutPage = () => {
 
   useEffect(() => {
     fetch(
-      "https://api.yellotek.com/api/teams?populate%5B0%5D=picture&sort%5B0%5D=order%3Aasc"
+      "https://api.yellotek.com/api/teams?populate%5B0%5D=picture&sort%5B0%5D=order%3Aasc",
     )
       .then((res) => res.json())
       .then((res) => {
@@ -62,7 +62,6 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 mt-8 mb-12">
             {teams.map((team) => {
-              console.log(team);
               return (
                 <div key={team.id}>
                   <div className="aspect-square relative">
