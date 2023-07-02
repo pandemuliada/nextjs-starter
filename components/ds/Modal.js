@@ -23,7 +23,7 @@ const Modal = (props) => {
           <div>
             {/* backdrop */}
             <motion.div
-              className="fixed z-0 inset-0 bg-[rgba(79,79,79,0.44)]"
+              className="fixed z-[10] inset-0 bg-[rgba(79,79,79,0.44)]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { delay: 0.1 } }}
@@ -35,7 +35,7 @@ const Modal = (props) => {
             <motion.div
               onClick={() => onClose && onClose()}
               className={classNames(
-                "fixed z-[1] inset-0 max-h-[100vh] w-full flex justify-center",
+                "fixed z-[10] inset-0 max-h-[100vh] w-full flex justify-center",
                 { "items-center": variant === "centered" },
                 { "overflow-y-auto": variant === "scrollable" },
               )}
